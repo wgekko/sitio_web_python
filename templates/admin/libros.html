@@ -1,0 +1,94 @@
+{% include 'admin/cabecera.html' %}
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                   Datos de libro
+                </div>
+                <br>
+                <div class="card-body">
+                    <form action="/admin/libros/guardar" method="post" enctype="multipart/form-data" >
+                        <div class="card-body">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                  <label for="textNombre">Nombre del Libro : </label>
+                                  <input type="text" class="form-control" name="textNombre" id="txtNombre" aria-describedby="helpId" placeholder="Ingrese nombre del libro">
+                                  <!--<small id="helpId" class="form-text text-muted">xxxxxxxxxxxx</small>-->
+                                </div> 
+                                <br>
+                                <div class="form-group">
+                                    <label for="textImagen">Imagen : </label>
+                                    <input type="file" class="form-control" name="textImagen" id="textImagen" aria-describedby="helpId" placeholder="Selección de la imagen">
+                                    <!--<small id="helpId" class="form-text text-muted">xxxxxxxxxxxx</small>-->
+                                </div>
+                                <br> 
+                                <div class="form-group">
+                                    <label for="textURL">URL Descarga : </label>
+                                    <input type="text" class="form-control" name="textURL" id="textURL" aria-describedby="helpId" placeholder="Escriba la URL de descarga">
+                                    <!--<small id="helpId" class="form-text text-muted">xxxxxxxxxxxx</small>-->
+                                </div>   
+                                <br>
+                                <button type="submit" class="btn btn-success">Agregar</button>  
+                            </form>
+                            <!--<h4 class="card-title">Usuario</h4>
+                            <p class="card-text">Contraseña</p>-->
+                        </div>
+
+                    </form>
+                    <!--<h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>-->
+                </div>
+                <div class="card-footer text-muted">
+                    Ingreso de datos de libros
+                </div>
+            </div>   
+        </div>
+        <div class="col-md-7">
+            <div class="table-responsive">
+                <table class="table table-bordered" bgcolor="white">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in libros %}
+                        <tr class="">
+                            <td>{{libro[0]}}</td>
+                            <td>{{libro[1]}}</td>
+                            <td>
+                                <img with="40" src="/img/{{libro[2]}}" class="img-fluid rounded-top" alt="libros">    
+                            </td>
+                            <td>                                
+                               
+                                <a name="" id="" class="btn btn-success" href=" {{libro[3]}}" role="button" target="_black"> descargar {{libro[1]}}</a>                                
+
+                            </td>
+                            <td class="">
+                                <form action="/admin/libros/borrar" method="post">                                    
+                                    <input value="{{libro[0]}}" type="hidden" name="textID" id="textID">                                           
+                                            <button type="submit" class="btn btn-danger">Eliminar</button>                                              
+                                    </input>
+                                </form>    
+                            </td>                            
+                        </tr>              
+                        {% endfor %}        
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% include 'admin/pie.html' %}  

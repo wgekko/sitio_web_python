@@ -1,0 +1,85 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Login del administrador</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+ 
+  <header>
+    {% include 'admin/cabecera.html' %}  
+  </header>
+  <main>
+    <div class="container">
+      <br><br>
+        <div class="row">
+            <div class="col-md-4">                
+            </div>
+            <div class="col-md-4">
+                <br><br>
+                {%if mensaje%}                  
+                  <div class="alert alert-danger" role="alert">
+                    <strong>{{ mensaje}}</strong> Usuario y/o clave incorrectas
+                  </div>
+                {% endif %}               
+                <div class="card">
+                    <div class="card-header">
+                        Inicio de sesión 
+                    </div>
+                    <div class="card-body">
+                        <form action="/admin/login" method="post">
+                            <div class="form-group">
+                              <label for="textUsuario">Usuario : </label>
+                              <input type="text" class="form-control" name="textUsuario" id="txtUsuario" aria-describedby="helpId" placeholder="Digite su usuario">
+                              <!--<small id="helpId" class="form-text text-muted">xxxxxxxxxxxx</small>-->
+                            </div> 
+                            <div class="form-group">
+                                <label for="textPassword">Contraseña : </label>
+                                <input type="password" class="form-control" name="textPassword" id="textPassword" aria-describedby="helpId" placeholder="Digite su contraseña">
+                                <!--<small id="helpId" class="form-text text-muted">xxxxxxxxxxxx</small>-->
+                              </div> 
+                              <br><br>
+                            <button type="submit" class="btn btn-success">Ingresar</button>  
+                        </form>
+                        <!--<h4 class="card-title">Usuario</h4>
+                        <p class="card-text">Contraseña</p>-->
+                    </div>
+                    <div class="card-footer text-muted">
+                        administración de sesión 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+        </div>
+    </div>
+
+  </main>
+  <footer>
+  {% include 'admin/pie.html' %}  
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+
+
+

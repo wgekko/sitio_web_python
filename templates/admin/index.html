@@ -1,0 +1,15 @@
+{% include 'admin/cabecera.html' %}  
+    <main>
+        <div class="p-5 bg-light">
+            <div class="container">           
+                    <h2 class="display-3" align="center">Bienvenido <strong>{{session['usuario']}}</strong></h2>
+                    <p class="lead"align="center">Ha ingresado a la página que gestiona y administra</p>
+                    <p class="lead" align="center">los libros relacionados con tema de programación </p>
+                    <hr class="my-2">                   
+                    <p class="lead" align="center">
+                        <a class="btn btn-primary btn-lg" href="/admin/libros" role="button" >Gestionar libros</a>
+                    </p>                                
+            </div>        
+        </div>
+    </main>  
+  {% include 'admin/pie.html' %}  

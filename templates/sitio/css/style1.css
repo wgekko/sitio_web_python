@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    background-color: #ffdd90;
+    background-image: url("https://cdn.pixabay.com/photo/2020/09/29/10/42/library-5612441_960_720.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;    
+  }
+  footer {
+    position: relative;   
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    font-style: italic;
+    
+  }
